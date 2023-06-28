@@ -16,7 +16,7 @@ COPY . .
 RUN go build -o main .
 
 # Expose the port that the server will be listening on
-EXPOSE 3000
+EXPOSE 80
 
 # Start the server
 CMD ["./main"]

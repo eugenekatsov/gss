@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "helm.fullname" . }}
+  name: backend
   labels:
     {{- include "helm.labels" . | nindent 4 }}
 spec:
@@ -11,6 +11,9 @@ spec:
   selector:
     matchLabels:
       {{- include "helm.selectorLabels" . | nindent 6 }}
+      app: gss
+      tier: backend
+      track: stable
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -19,6 +22,9 @@ spec:
       {{- end }}
       labels:
         {{- include "helm.selectorLabels" . | nindent 8 }}
+        app: gss
+        tier: backend
+        track: stable
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -28,7 +34,7 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: gss
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -38,7 +44,7 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
-            initialDelaySeconds: 5
+            initialDelaySeconds: 20
             httpGet:
               path: /healthz
               port: http

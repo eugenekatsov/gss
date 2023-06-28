@@ -59,5 +59,5 @@ func main() {
 	e.DELETE("/users/:id", internal.DeleteUser)
 
 	// Start server
-	e.Logger.Fatal(e.Start(":3000"))
+	e.Logger.Fatal(e.Start(":80"))
 }
