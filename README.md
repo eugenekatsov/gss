@@ -5,10 +5,10 @@ A toy api for local experimenting with a golang code running inside a minikube p
 ## Setup
 
 You'll need the following:
-* I use docker desktop [docker]()
-* to run commands against your cluster [kubectl]()
-* for local kubernetes [minikube]()
-* Charts are a great way to deploy and manage releases to your minikube cluster [helm]()
+* I use docker desktop [docker](https://www.docker.com/products/docker-desktop/)
+* to run commands against your cluster [kubectl](https://kubernetes.io/docs/tasks/tools/)
+* for local kubernetes [minikube](https://minikube.sigs.k8s.io/docs/)
+* Charts are a great way to deploy and manage releases to your minikube cluster [helm](https://helm.sh)
 * to watch pod logs [stern](https://github.com/stern/stern)
 
 
@@ -23,3 +23,4 @@ You'll need the following:
 8. Run `minikube service <YOUR SERVICE NAME> --url` to get the url
 9. Use postman or curl to verify things are working by getting/posting to the url
 10. To see some tracing run the docker container (on its own not in minikube), exec into it and `cat traces.txt`
+11. To see some logs use `stern <YOUR POD NAME>`
