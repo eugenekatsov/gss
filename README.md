@@ -2,7 +2,15 @@
 
 A toy api for local experimenting with a golang code running inside a minikube pod with open telemetry tracing written to a text file.
 
-Assumes you have minikube,kubectl,docker, and helm installed
+## Setup
+
+You'll need the following:
+* I use docker desktop [docker]()
+* to run commands against your cluster [kubectl]()
+* for local kubernetes [minikube]()
+* Charts are a great way to deploy and manage releases to your minikube cluster [helm]()
+* to watch pod logs [stern](https://github.com/stern/stern)
+
 
 ## Getting Started
 
