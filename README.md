@@ -24,3 +24,4 @@ You'll need the following:
 9. Use postman or curl to verify things are working by getting/posting to the url
 10. To see some tracing run the docker container (on its own not in minikube), exec into it and `cat traces.txt`
 11. To see some logs use `stern <YOUR POD NAME>`
+12. To have a general overview of your cluster: `minikube dashboard`
