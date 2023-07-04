@@ -1,6 +1,6 @@
 # gss (go sample service)
 
-A toy api for local experimenting with a golang code running inside a minikube pod with open telemetry tracing written to a text file.
+A toy api for local experimenting with a golang code running inside a minikube pod with open telemetry tracing written to a text file. The accompanying frontend is [here](https://github.com/eugenekatsov/gss-fe)
 
 ## Setup
 
